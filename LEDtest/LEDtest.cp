@@ -1,4 +1,9 @@
-#line 1 "C:/Users/ML15AAF/Documents/GitHub/ClickerTest/LEDtest/LEDtest.c"
+#line 1 "C:/Users/ML15AAF/Documents/GitHub/6lowpanClickerTests/LEDtest/LEDtest.c"
+
+
+
+
+
 
 sbit LED1 at LATB1_bit;
 sbit LED2 at LATB2_bit;
@@ -25,16 +30,17 @@ void main()
  LED1 = 0;
  LED2 = 1;
 
+
  T1CON = 0;
  TMR1 = 0;
  PR1 = 0xFFFF;
 
+ T1CONbits.TCKPS0 = 1;
+ T1CONbits.TCKPS1 = 1;
+
  T1IP0_bit = 1;
  T1IP1_bit = 1;
  T1IP2_bit = 1;
-
- T1CONbits.TCKPS0 = 1;
- T1CONbits.TCKPS1 = 1;
 
  EnableInterrupts();
  T1IF_bit = 0;
