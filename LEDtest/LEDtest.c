@@ -29,6 +29,10 @@ void main()
   LED1 = 0;
   LED2 = 1;
   
+  ANSELBSETbits;
+  
+
+  
 
   T1CON = 0;  // set timer1 settings register to 0
   TMR1 = 0;   // set timer1 count to 0
@@ -36,6 +40,7 @@ void main()
   
   T1CONbits.TCKPS0 = 1; // set timer prescalar
   T1CONbits.TCKPS1 = 1; // uses 2 bits, 11 = 256 prescalar
+  SPI2STATbits.SPIRBF
 
   T1IP0_bit = 1; // set the timer interrupt priority to 7
   T1IP1_bit = 1; // takes 3 bits
